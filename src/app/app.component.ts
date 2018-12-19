@@ -1,3 +1,4 @@
+//https://blog.florimondmanca.com/restful-api-design-13-best-practices-to-make-your-users-happy
 import { Component } from '@angular/core';
 
 @Component({
