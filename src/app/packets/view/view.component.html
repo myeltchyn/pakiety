@@ -1,3 +1,4 @@
+<div class="table-current">
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
  
@@ -34,4 +35,6 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
+<div>
+<mat-paginator [length]="resultsLength" [pageSize]="5"></mat-paginator>
+</div></div>
