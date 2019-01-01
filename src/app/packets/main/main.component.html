@@ -1,4 +1,18 @@
-<p>
-  main works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Pakiety</span>
+    <span class="toolbar-space"></span>
+    <form [formGroup]="searchForm">
+    <input formControlName="searchField" matInput *ngIf="router.url=='/pakiety' && !search" placeholder="Szukaj instalacji ..."
+      type="text" class="search" autocomplete="off" />
+    <span *ngIf="router.url=='/pakiety' && !search" (click)="closeSearch()" class="close-search">
+      <mat-icon class="close-search-icon">close</mat-icon>
+    </span>
+    </form>
+
+    <button *ngIf="router.url=='/pakiety' && search" mat-raised-button color="primary" (click)="doSearch()">
+      <mat-icon>search</mat-icon>Szukaj
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
 <router-outlet></router-outlet>

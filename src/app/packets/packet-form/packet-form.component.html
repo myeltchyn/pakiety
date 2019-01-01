@@ -1,0 +1,54 @@
+<div class="form-add-packet">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Nazwa pakietu" type="text" formControlName="nazwa">
+      
+    </mat-form-field>
+    <div *ngIf="profileForm.get('nazwa').hasError('required') && profileForm.get('nazwa').touched" class="error">
+      Nazwa pakietu jest polem obowiązkowym!
+    </div>
+    <div *ngIf="profileForm.get('nazwa').hasError('minlength') && profileForm.get('nazwa').touched" class="error">
+      Zbyt mało znaków!
+    </div>
+
+    <mat-form-field class="full-width">
+      <input matInput [matDatepicker]="pickerdw" 
+              placeholder="Data wydania" formControlName="dataWydania">
+      <mat-datepicker-toggle matSuffix [for]="pickerdw"></mat-datepicker-toggle>
+      <mat-datepicker #pickerdw></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput [matDatepicker]="pickertw" placeholder="Termin wykonania" formControlName="terminWykonania">
+      <mat-datepicker-toggle matSuffix [for]="pickertw"></mat-datepicker-toggle>
+      <mat-datepicker #pickertw></mat-datepicker>
+    </mat-form-field>
+
+    <h4>Czy wymagany załącznik?</h4>
+    <mat-form-field>
+      <select matNativeControl required formControlName="wymaganyZalacznik">
+        <option value="TAK">TAK</option>
+        <option value="NIE">NIE</option>
+      </select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Opis" type="text" formControlName="opis">
+    </mat-form-field>
+
+    <div>
+
+      <label formArrayName="jednOrg" *ngFor="let order of controls; let i = index">
+        <mat-checkbox [formControlName]="i"> {{jednOrg[i].name}}&nbsp;&nbsp;</mat-checkbox>
+      </label>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" type="submit">Zapisz</button>
+      <button mat-raised-button color="warn" routerLink="/">Anuluj</button>
+
+    </div>
+
+  </form>
+</div>
+

@@ -4,7 +4,7 @@ import { Http404Component } from './core/http404/http404.component';
 import { PacketsModule } from './packets/packets/packets.module';
 
 const routes: Routes = [
-  { path: 'pakiety', loadChildren:()=>PacketsModule},
+  { path: 'pakiety', loadChildren: () => PacketsModule },
   { path: '', redirectTo: 'pakiety', pathMatch: 'full' },
   { path: '**', component: Http404Component }
 ];

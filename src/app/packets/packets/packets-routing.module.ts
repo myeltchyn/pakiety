@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from '../main/main.component';
 import { ViewComponent } from '../view/view.component';
+import { PacketFormComponent } from '../packet-form/packet-form.component';
+import { PacketFormResolverService } from 'src/app/core/packet-form-resolver.service';
 
 const routes: Routes = [
   {
@@ -9,8 +11,11 @@ const routes: Routes = [
     component: MainComponent,
     pathMatch: 'prefix',
     children: [
-      { path: '', component: ViewComponent},
-
+      { path: '', component: ViewComponent },
+      { path: 'dodaj', 
+        component: PacketFormComponent, 
+        resolve: { jo: PacketFormResolverService } 
+      }
     ]
 
   }

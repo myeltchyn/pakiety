@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ViewresolverService } from './viewresolver.service';
+import { SearchService } from './search.service';
 
-describe('ViewresolverService', () => {
+describe('SearchService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ViewresolverService = TestBed.get(ViewresolverService);
+    const service: SearchService = TestBed.get(SearchService);
     expect(service).toBeTruthy();
   });
 });

@@ -24,147 +24,190 @@
       ],
       "opis": "Proszę o zapoznanie się z opisem zmian."
     }
-  ],
-  "suma":[{"id":1,"totalcount":12}],
+    ],
   "items": [
-    { "id":1,
-      "nazwapakietu":"1. CZM wersja 2018.10 oraz e-CZM",
+    {
+      "id": 1,
+      "nazwapakietu": "1. CZM wersja 2018.10 oraz e-CZM",
       "idwykonania": 1,
       "zatwprzezias": false,
       "liczbaok": "18/10",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-07",
-      "wykonacdo":"2018-12-20",
-      "idpakietu":2,
-      "sumaId":1
+      "datawydania": "2018-12-07",
+      "wykonacdo": "2018-12-20",
+      "idpakietu": 2,
+      "sumaId": 1
     },
-    { 
-      "nazwapakietu":"2. Zestaw 546_IS. (R.4.0.5p11 SC188)",
+    {
+      "nazwapakietu": "2. Zestaw 546_IS. (R.4.0.5p11 SC188)",
       "idwykonania": 2,
       "zatwprzezias": false,
       "liczbaok": "18/08",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-01",
-      "wykonacdo":"2018-12-24",
-      "idpakietu":1,
-      "sumaId":1
+      "datawydania": "2018-12-01",
+      "wykonacdo": "2018-12-24",
+      "idpakietu": 1,
+      "sumaId": 1
     },
-    { "nazwapakietu":"3. CZM wersja 2018.10 oraz e-CZM",
+    {
+      "nazwapakietu": "3. CZM wersja 2018.10 oraz e-CZM",
       "idwykonania": 3,
       "zatwprzezias": false,
       "liczbaok": "18/10",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-07",
-      "wykonacdo":"2018-12-20",
-      "idpakietu":2,
-      "sumaId":1
+      "datawydania": "2018-12-07",
+      "wykonacdo": "2018-12-20",
+      "idpakietu": 2,
+      "sumaId": 1
     },
-    { 
-      "nazwapakietu":"4. Zestaw 546_IS. (R.4.0.5p11 SC188)",
+    {
+      "nazwapakietu": "4. Zestaw 546_IS. (R.4.0.5p11 SC188)",
       "idwykonania": 4,
       "zatwprzezias": false,
       "liczbaok": "18/08",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-01",
-      "wykonacdo":"2018-12-24",
-      "idpakietu":1,
-      "sumaId":1
+      "datawydania": "2018-12-01",
+      "wykonacdo": "2018-12-24",
+      "idpakietu": 1,
+      "sumaId": 1
     },
-    { "nazwapakietu":"5. CZM wersja 2018.10 oraz e-CZM",
+    {
+      "nazwapakietu": "5. CZM wersja 2018.10 oraz e-CZM",
       "idwykonania": 5,
       "zatwprzezias": false,
       "liczbaok": "18/10",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-07",
-      "wykonacdo":"2018-12-20",
-      "idpakietu":2,
-      "sumaId":1
+      "datawydania": "2018-12-07",
+      "wykonacdo": "2018-12-20",
+      "idpakietu": 2,
+      "sumaId": 1
     },
-    { 
-      "nazwapakietu":"6. Zestaw 546_IS. (R.4.0.5p11 SC188)",
+    {
+      "nazwapakietu": "6. Zestaw 546_IS. (R.4.0.5p11 SC188)",
       "idwykonania": 6,
       "zatwprzezias": false,
       "liczbaok": "18/08",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-01",
-      "wykonacdo":"2018-12-24",
-      "idpakietu":1,
-      "nadmiarowy":2,
-      "sumaId":1
+      "datawydania": "2018-12-01",
+      "wykonacdo": "2018-12-24",
+      "idpakietu": 1,
+      "nadmiarowy": 2,
+      "sumaId": 1
     },
-    { "nazwapakietu":"7. CZM wersja 2018.10 oraz e-CZM",
+    {
+      "nazwapakietu": "7. CZM wersja 2018.10 oraz e-CZM",
       "idwykonania": 7,
       "zatwprzezias": false,
       "liczbaok": "18/10",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-07",
-      "wykonacdo":"2018-12-20",
-      "idpakietu":2,
-      "sumaId":1
+      "datawydania": "2018-12-07",
+      "wykonacdo": "2018-12-20",
+      "idpakietu": 2,
+      "sumaId": 1
     },
-    { 
-      "nazwapakietu":"8. Zestaw 546_IS. (R.4.0.5p11 SC188)",
+    {
+      "nazwapakietu": "8. Zestaw 546_IS. (R.4.0.5p11 SC188)",
       "idwykonania": 8,
       "zatwprzezias": false,
       "liczbaok": "18/08",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-01",
-      "wykonacdo":"2018-12-24",
-      "idpakietu":1,
-      "sumaId":1
+      "datawydania": "2018-12-01",
+      "wykonacdo": "2018-12-24",
+      "idpakietu": 1,
+      "sumaId": 1
     },
-    { "nazwapakietu":"9. CZM wersja 2018.10 oraz e-CZM",
+    {
+      "nazwapakietu": "9. CZM wersja 2018.10 oraz e-CZM",
       "idwykonania": 9,
       "zatwprzezias": false,
       "liczbaok": "18/10",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-07",
-      "wykonacdo":"2018-12-20",
-      "idpakietu":2,
-      "sumaId":1
+      "datawydania": "2018-12-07",
+      "wykonacdo": "2018-12-20",
+      "idpakietu": 2,
+      "sumaId": 1
     },
-    { 
-      "nazwapakietu":"10. Zestaw 546_IS. (R.4.0.5p11 SC188)",
+    {
+      "nazwapakietu": "10. Zestaw 546_IS. (R.4.0.5p11 SC188)",
       "idwykonania": 10,
       "zatwprzezias": false,
       "liczbaok": "18/08",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-01",
-      "wykonacdo":"2018-12-24",
-      "idpakietu":1,
-      "sumaId":1
+      "datawydania": "2018-12-01",
+      "wykonacdo": "2018-12-24",
+      "idpakietu": 1,
+      "sumaId": 1
     },
-    { "nazwapakietu":"11.CZM wersja 2018.10 oraz e-CZM",
+    {
+      "nazwapakietu": "11.CZM wersja 2018.10 oraz e-CZM",
       "idwykonania": 11,
       "zatwprzezias": false,
       "liczbaok": "18/10",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-07",
-      "wykonacdo":"2018-12-20",
-      "idpakietu":2,
-      "sumaId":1
+      "datawydania": "2018-12-07",
+      "wykonacdo": "2018-12-20",
+      "idpakietu": 2,
+      "sumaId": 1
     },
-    { 
-      "nazwapakietu":"12. Zestaw 546_IS. (R.4.0.5p11 SC188)",
+    {
+      "nazwapakietu": "12. Zestaw 546_IS. (R.4.0.5p11 SC188)",
       "idwykonania": 12,
       "zatwprzezias": false,
       "liczbaok": "18/08",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-01",
-      "wykonacdo":"2018-12-24",
-      "idpakietu":1,
-      "sumaId":1
+      "datawydania": "2018-12-01",
+      "wykonacdo": "2018-12-24",
+      "idpakietu": 1,
+      "sumaId": 1
     },
-    { 
-      "nazwapakietu":"13. Zestaw 546_IS. (R.4.0.5p11 SC188)",
+    {
+      "nazwapakietu": "13. Zestaw 546_IS. (R.4.0.5p11 SC188)",
       "idwykonania": 13,
       "zatwprzezias": false,
       "liczbaok": "18/08",
       "osobazatwierdzajaca": null,
-      "datawydania":"2018-12-01",
-      "wykonacdo":"2018-12-24",
-      "idpakietu":1,
-      "sumaId":1
+      "datawydania": "2018-12-01",
+      "wykonacdo": "2018-12-24",
+      "idpakietu": 1,
+      "sumaId": 1
+    }
+  ],
+  "jorg": [
+    {
+      "id": "US2",
+      "name": "US2802"
+    },
+    {
+      "id": "US3",
+      "name": "US2803"
+    },
+    {
+      "id": "US4",
+      "name": "US2804"
+    },
+    {
+      "id": "US5",
+      "name": "US2805"
+    },
+    {
+      "id": "US6",
+      "name": "US2806"
+    },
+    {
+      "id": "US7",
+      "name": "US2807"
+    },
+    {
+      "id": "US8",
+      "name": "US2808"
+    },
+    {
+      "id": "US9",
+      "name": "US2809"
+    },
+    {
+      "id": "US10",
+      "name": "US2810"
     }
   ]
 }
