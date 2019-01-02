@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SearchService {
   searchingString=new Subject<string>()
-
   constructor() { }
 
   setSearchingString(substr:string){

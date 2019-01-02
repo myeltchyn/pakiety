@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { Wykonanie } from '../model/wykonanie';
 import { Pakiet,pakiet } from '../model/pakiet';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable, Subscription } from 'rxjs';
-import {map, tap} from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import {map} from 'rxjs/operators';
 import { Wykonaniezbiorcze } from '../model/wykonaniezbiorcze';
 import { Jorg } from '../model/jorg';
 
@@ -12,9 +12,7 @@ import { Jorg } from '../model/jorg';
 })
 export class RestService {
   constructor(private http:HttpClient) {
-  /* this.jorg.subscribe(j=>this.jorgs=j,
-    (error)=>console.log('error'),
-    ()=>console.log(this.jorgs))*/
+   
   }
 
   getPakiety(): Observable<Pakiet[]> {
@@ -22,7 +20,13 @@ export class RestService {
         pipe(map((data)=>data.map((pakiet)=>new Pakiet(pakiet)))
     );
   }
-  
+
+  /*get wykonaniaPakietow():Observable<Wykonaniezbiorcze[]>{
+    return this.http.get<Wykonaniezbiorcze[]>('/api/wykonaniezbiorcze').
+        pipe(map((data)=>data.map((pakiet)=>new Wykonaniezbiorcze(pakiet)))
+    );
+  }*/
+
   getWykonaniaPakietow(page:number,limit:number,search:string):Observable<HttpResponse<Wykonaniezbiorcze>>{
     let uriWithoutFilter=`/api/items?_page=${page}&_limit=${limit}`;
     let uriWithFilter=`/api/items?_page=${page}&_limit=${limit}&nazwapakietu_like=${search}`
@@ -35,7 +39,4 @@ export class RestService {
     return this.http.get<Jorg[]>('/api/jorg');
     
   }
-
-  
 }
-

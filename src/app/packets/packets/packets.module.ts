@@ -21,6 +21,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { SearchService } from 'src/app/core/search.service';
 import {MatSortModule} from '@angular/material/sort';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [MainComponent, ViewComponent, PacketFormComponent,TrueFalsePipe],
@@ -39,8 +40,8 @@ import {MatSortModule} from '@angular/material/sort';
     FormsModule,
     MatToolbarModule,
     MatIconModule,
-    MatSortModule
-
+    MatSortModule,
+    MatProgressSpinnerModule
   ],
   providers: [RestService, RepositoryService,PacketFormResolverService,SearchService]
 })
