@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PacketsRoutingModule } from './packets-routing.module';
 import { MainComponent } from '../main/main.component';
-import { ViewComponent } from '../view/view.component';
+import { ViewComponent, DialogPacket } from '../view/view.component';
 import { RestService } from 'src/app/core/rest.service';
 import { RepositoryService } from 'src/app/core/repository.service';
 import { MatTableModule, MatNativeDateModule } from '@angular/material';
@@ -22,9 +22,10 @@ import {MatIconModule} from '@angular/material/icon';
 import { SearchService } from 'src/app/core/search.service';
 import {MatSortModule} from '@angular/material/sort';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [MainComponent, ViewComponent, PacketFormComponent,TrueFalsePipe],
+  declarations: [MainComponent, ViewComponent, PacketFormComponent,TrueFalsePipe,DialogPacket],
   imports: [
     CommonModule,
     PacketsRoutingModule,
@@ -41,8 +42,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatToolbarModule,
     MatIconModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule
   ],
-  providers: [RestService, RepositoryService,PacketFormResolverService,SearchService]
+  providers: [RestService, RepositoryService,PacketFormResolverService,SearchService],
+  entryComponents:[DialogPacket]
 })
 export class PacketsModule { }

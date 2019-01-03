@@ -1,15 +1,12 @@
 <div class="example-loading-shade"
        *ngIf="isLoadingResults || isRateLimitReached">
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
-    <div class="example-rate-limit-reached" *ngIf="isRateLimitReached">
-      GitHub's API rate limit has been reached. It will be reset in one minute.
-    </div>
-  </div>
+   </div>
 <div class="table-current">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort >
     <ng-container matColumnDef="nazwapakietu">
       <th mat-header-cell *matHeaderCellDef> Pakiet </th>
-      <td mat-cell *matCellDef="let element"> {{element.nazwapakietu}} </td>
+      <td mat-cell *matCellDef="let element"><span class="packetname" (click)="clickPacketName()"> {{element.nazwapakietu}} </span></td>
     </ng-container>
 
     <ng-container matColumnDef="zatwprzezias">

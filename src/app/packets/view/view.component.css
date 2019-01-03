@@ -14,3 +14,12 @@ table {
     align-items: center;
     justify-content: center;
   }
+
+  .packetname {
+    cursor:pointer;
+
+  }
+
+  .packetname:hover {
+    color:green;
+  }
