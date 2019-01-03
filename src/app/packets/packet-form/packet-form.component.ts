@@ -4,6 +4,7 @@ import { RestService } from 'src/app/core/rest.service';
 import { Jorg } from 'src/app/model/jorg';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { pakiet, Pakiet } from 'src/app/model/pakiet';
 @Component({
   selector: 'app-packet-form',
   templateUrl: './packet-form.component.html',
@@ -35,7 +36,7 @@ export class PacketFormComponent implements OnInit {
           validators: [Validators.required]
         }),
         opis: new FormControl('', {
-          validators: [Validators.required,,Validators.minLength(4),Validators.maxLength(50)]
+          validators: [Validators.required,Validators.minLength(4),Validators.maxLength(50)]
         }),
         jednOrg: new FormArray(this.controls)
       },{updateOn: 'blur'});
@@ -43,6 +44,11 @@ export class PacketFormComponent implements OnInit {
     );
   }
   onSubmit() {
-    console.warn(this.profileForm);
+    console.warn(this.profileForm.value);
+    let packetToSave=new Pakiet();
+    packetToSave.nazwa=this.profileForm.value.nazwa;
+    console.log(packetToSave.nazwa);
+    this.profileForm.value
+    this.profileForm.valid ? this.rest.savePacket(packetToSave):null;
   }
 }

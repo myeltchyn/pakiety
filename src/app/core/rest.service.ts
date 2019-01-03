@@ -39,4 +39,8 @@ export class RestService {
     return this.http.get<Jorg[]>('/api/jorg');
     
   }
+
+  savePacket(packet:pakiet):void{
+    console.log(packet);
+  }
 }

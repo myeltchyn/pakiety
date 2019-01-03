@@ -50,7 +50,7 @@ export class ViewComponent implements OnInit {
   clickPacketName() {
     this.dialog.open(DialogPacket, {
       data: {
-        animal: 'panda'
+        animal: 'unicorn'
       }
     });
   }
