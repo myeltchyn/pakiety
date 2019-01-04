@@ -15,7 +15,7 @@ export interface pakiet {
     dataWydania: Date,
     terminWykonania: Date,
     wymaganyZalacznik: boolean,
-    dotUS: Uesy[],
+    dotUS: string[],
     opis?: string,
 }
 
@@ -25,7 +25,7 @@ export class Pakiet implements pakiet {
     public dataWydania: Date;
     public terminWykonania: Date;
     public wymaganyZalacznik: boolean;
-    public dotUS: Uesy[];
+    public dotUS: string[];
     public opis?: string;
     
     constructor(attrs: Partial<pakiet> = {}) {

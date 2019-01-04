@@ -21,10 +21,10 @@ export class PacketFormComponent implements OnInit {
   ngOnInit() {
     this.route.data.pipe(map((data) => data.jo)).subscribe(jorg => {
       this.jednOrg = jorg;
-      this.controls = this.jednOrg.map(c => new FormControl(true));
+      this.controls = this.jednOrg.map(() => new FormControl(true));
       this.profileForm = new FormGroup({
         nazwa: new FormControl('', {
-          validators: [Validators.required,Validators.minLength(4),Validators.maxLength(50)]
+          validators: [Validators.required, Validators.minLength(4), Validators.maxLength(50)]
         }),
         dataWydania: new FormControl(new Date(), {
           validators: [Validators.required]
@@ -36,19 +36,27 @@ export class PacketFormComponent implements OnInit {
           validators: [Validators.required]
         }),
         opis: new FormControl('', {
-          validators: [Validators.required,Validators.minLength(4),Validators.maxLength(50)]
+          validators: [Validators.required, Validators.minLength(4), Validators.maxLength(50)]
         }),
         jednOrg: new FormArray(this.controls)
-      },{updateOn: 'blur'});
+      }, { updateOn: 'blur' });
     }
     );
   }
   onSubmit() {
-    console.warn(this.profileForm.value);
-    let packetToSave=new Pakiet();
-    packetToSave.nazwa=this.profileForm.value.nazwa;
-    console.log(packetToSave.nazwa);
-    this.profileForm.value
-    this.profileForm.valid ? this.rest.savePacket(packetToSave):null;
+    if (this.profileForm.valid) {
+      let packetToSave = new Pakiet();
+      packetToSave.nazwa = this.profileForm.value.nazwa;
+      packetToSave.dataWydania = this.profileForm.value.dataWydania;
+      packetToSave.opis = this.profileForm.value.opis;
+      packetToSave.terminWykonania = this.profileForm.value.terminWykonania;
+      packetToSave.wymaganyZalacznik = this.profileForm.value.wymaganyZalacznik;
+      packetToSave.dotUS = [];
+      this.jednOrg.map((j, i, a) => this.profileForm.value.jednOrg[i] ? packetToSave.dotUS.push(j.id) : null);
+      this.rest.savePacket(packetToSave).subscribe(resp=>console.log(resp));
+    }
+    else {
+      console.warn('Fields in forms not validated!');
+    }
   }
 }

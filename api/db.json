@@ -23,8 +23,38 @@
         2805
       ],
       "opis": "Proszę o zapoznanie się z opisem zmian."
+    },
+    {
+      "nazwa": "paket",
+      "dataWydania": "2019-01-04T11:41:40.748Z",
+      "terminWykonania": "2019-01-04T11:41:40.748Z",
+      "wymaganyZalacznik": "NIE",
+      "dotUS": [
+        "2802",
+        "2803",
+        "2804",
+        "2805",
+        "2806",
+        "2807",
+        "2808",
+        "2809",
+        "2810"
+      ],
+      "opis": "opis paketu",
+      "id": 3
+    },
+    {
+      "nazwa": "paket2",
+      "dataWydania": "2019-01-04T11:41:40.748Z",
+      "terminWykonania": "2019-01-04T11:41:40.748Z",
+      "wymaganyZalacznik": "TAK",
+      "dotUS": [
+        "2802"
+      ],
+      "opis": "opis paketu2",
+      "id": 4
     }
-    ],
+  ],
   "items": [
     {
       "id": 1,
@@ -174,39 +204,39 @@
   ],
   "jorg": [
     {
-      "id": "US2",
+      "id": "2802",
       "name": "US2802"
     },
     {
-      "id": "US3",
+      "id": "2803",
       "name": "US2803"
     },
     {
-      "id": "US4",
+      "id": "2804",
       "name": "US2804"
     },
     {
-      "id": "US5",
+      "id": "2805",
       "name": "US2805"
     },
     {
-      "id": "US6",
+      "id": "2806",
       "name": "US2806"
     },
     {
-      "id": "US7",
+      "id": "2807",
       "name": "US2807"
     },
     {
-      "id": "US8",
+      "id": "2808",
       "name": "US2808"
     },
     {
-      "id": "US9",
+      "id": "2809",
       "name": "US2809"
     },
     {
-      "id": "US10",
+      "id": "2810",
       "name": "US2810"
     }
   ]

@@ -40,7 +40,7 @@ export class RestService {
     
   }
 
-  savePacket(packet:pakiet):void{
-    console.log(packet);
+  savePacket(packet:pakiet):Observable<pakiet>{
+    return this.http.post<pakiet>('/api/pakiety',packet);
   }
 }
