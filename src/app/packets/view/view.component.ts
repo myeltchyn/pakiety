@@ -5,6 +5,7 @@ import { MatPaginator, MatSort, MatDialogRef, MAT_DIALOG_DATA, MatDialog } from 
 import { SearchService } from 'src/app/core/search.service';
 import { merge } from 'rxjs';
 import { startWith, switchMap, map, tap } from 'rxjs/operators';
+import { Pakiet, pakiet } from 'src/app/model/pakiet';
 
 @Component({
   selector: 'app-view',
@@ -47,12 +48,16 @@ export class ViewComponent implements OnInit {
 
   }
 
-  clickPacketName() {
-    this.dialog.open(DialogPacket, {
-      data: {
-        animal: 'unicorn'
-      }
-    });
+  clickPacketName(event:number) {
+    
+    console.log(event);
+    this.rest.getPakietById(event).subscribe(pakiet=>
+      this.dialog.open(DialogPacket, {
+        data: {
+          animal: 'unicorn'
+        }
+      }));
+    
   }
 }
 export interface DialogData {

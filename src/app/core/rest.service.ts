@@ -21,6 +21,11 @@ export class RestService {
     );
   }
 
+  getPakietById(id:number):Observable<Pakiet>{
+    return this.http.get<Pakiet>(`/api/pakiety/${id}`).
+      pipe(map((data)=>new Pakiet(data)));
+  }
+
   /*get wykonaniaPakietow():Observable<Wykonaniezbiorcze[]>{
     return this.http.get<Wykonaniezbiorcze[]>('/api/wykonaniezbiorcze').
         pipe(map((data)=>data.map((pakiet)=>new Wykonaniezbiorcze(pakiet)))
