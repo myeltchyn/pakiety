@@ -115,9 +115,9 @@
     {
       "nazwapakietu": "6. Zestaw 546_IS. (R.4.0.5p11 SC188)",
       "idwykonania": 6,
-      "zatwprzezias": false,
-      "liczbaok": "18/08",
-      "osobazatwierdzajaca": null,
+      "zatwprzezias": true,
+      "liczbaok": "18/18",
+      "osobazatwierdzajaca": "Wojciech Mann",
       "datawydania": "2018-12-01",
       "wykonacdo": "2018-12-24",
       "idpakietu": 1,
@@ -201,6 +201,33 @@
       "idpakietu": 1,
       "sumaId": 1
     }
+  ],
+  "usexe":[
+    {
+      "id": 1,
+      "idpakietu":1,
+      "dataWykonania": "2018-12-01",
+      "dataZamieszczenia":"2018-12-01",
+      "zalacznik": false,
+      "us": 2805,
+      "uwagi": "Wszystko OK",
+      "status":"Wykonana poprawnie",
+      "wykonal":"Informatyk 1",
+      "zamiescil":"Informatyk1_1"
+    },
+    {
+      "id": 2,
+      "idpakietu":1,
+      "dataWykonania": "2018-12-02",
+      "dataZamieszczenia":"2018-12-02",
+      "zalacznik": false,
+      "us": 2804,
+      "uwagi": "Wszystko OKI",
+      "status":"Wykonana poprawnie!",
+      "wykonal":"Informatyk 2",
+      "zamiescil":"Informatyk2_1"
+    }
+
   ],
   "jorg": [
     {

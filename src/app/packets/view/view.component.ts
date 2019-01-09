@@ -17,6 +17,7 @@ export class ViewComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   animal = 'HotDog';
   name = 'king';
+  x=new Pakiet();
 
   isLoadingResults = false;
   resultsLength = 0;
@@ -51,18 +52,14 @@ export class ViewComponent implements OnInit {
   clickPacketName(event:number) {
     
     console.log(event);
-    this.rest.getPakietById(event).subscribe(pakiet=>
-      this.dialog.open(DialogPacket, {
-        data: {
-          animal: 'unicorn'
-        }
-      }));
+    this.rest.getPakietById(event).subscribe(pakiet=>{
+      console.log(pakiet);
+      this.dialog.open(DialogPacket, { data: pakiet })}
+      );
     
   }
 }
-export interface DialogData {
-  animal: 'panda' | 'unicorn' | 'lion';
-}
+
 @Component({
   selector: 'dialog-packet',
   templateUrl: 'dialog-packet.html',
@@ -70,7 +67,7 @@ export interface DialogData {
 export class DialogPacket {
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
+    @Inject(MAT_DIALOG_DATA) public pakiet: Pakiet) { }
 
 
 }
