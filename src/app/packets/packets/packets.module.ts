@@ -17,15 +17,16 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { PacketFormResolverService } from '../../core/packet-form-resolver.service';
 import { TrueFalsePipe } from '../../pipes/true-false.pipe';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { SearchService } from 'src/app/core/search.service';
-import {MatSortModule} from '@angular/material/sort';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatSortModule } from '@angular/material/sort';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogConfirm } from '../view/dialog-confirm.component';
 
 @NgModule({
-  declarations: [MainComponent, ViewComponent, PacketFormComponent,TrueFalsePipe,DialogPacket],
+  declarations: [MainComponent, ViewComponent, PacketFormComponent, TrueFalsePipe, DialogPacket, DialogConfirm],
   imports: [
     CommonModule,
     PacketsRoutingModule,
@@ -45,7 +46,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatProgressSpinnerModule,
     MatDialogModule
   ],
-  providers: [RestService, RepositoryService,PacketFormResolverService,SearchService],
-  entryComponents:[DialogPacket]
+  providers: [RestService, RepositoryService, PacketFormResolverService, SearchService],
+  entryComponents: [DialogPacket,DialogConfirm]
 })
 export class PacketsModule { }

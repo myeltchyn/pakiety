@@ -1,11 +1,12 @@
-import { Component, OnInit, ViewChild, Input, Inject } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { RestService } from 'src/app/core/rest.service';
 import { Wykonaniezbiorcze } from 'src/app/model/wykonaniezbiorcze';
-import { MatPaginator, MatSort, MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
+import { MatPaginator, MatSort, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { SearchService } from 'src/app/core/search.service';
 import { merge } from 'rxjs';
 import { startWith, switchMap, map, tap } from 'rxjs/operators';
-import { Pakiet, pakiet } from 'src/app/model/pakiet';
+import { CONFIG, Config } from 'src/app/model/config';
+import { DialogConfirm } from './dialog-confirm.component';
 
 @Component({
   selector: 'app-view',
@@ -15,9 +16,6 @@ import { Pakiet, pakiet } from 'src/app/model/pakiet';
 export class ViewComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  animal = 'HotDog';
-  name = 'king';
-  x=new Pakiet();
 
   isLoadingResults = false;
   resultsLength = 0;
@@ -26,7 +24,10 @@ export class ViewComponent implements OnInit {
   dataSource: Wykonaniezbiorcze;
 
 
-  constructor(private rest: RestService, private searchService: SearchService, public dialog: MatDialog) { }
+  constructor(@Inject(CONFIG) public config: Config,
+    private rest: RestService, private searchService: SearchService, public dialog: MatDialog) {
+    console.log(this.config.baseUrl);
+  }
 
   ngOnInit() {
 
@@ -49,15 +50,27 @@ export class ViewComponent implements OnInit {
 
   }
 
-  clickPacketName(event:number) {
-    
+  clickPacketName(event: number) {
+
     console.log(event);
-    this.rest.getPakietById(event).subscribe(pakiet=>{
+    this.rest.getPakietById(event).subscribe(pakiet => {
       console.log(pakiet);
-      this.dialog.open(DialogPacket, { data: pakiet })}
-      );
-    
+      this.dialog.open(DialogPacket, {
+        data: {
+          nazwa: pakiet.nazwa,
+          dotUS: pakiet.dotUS,
+          numer: 999
+        }
+      })
+    }
+    );
+
   }
+clickConfirm(){
+  console.log('confirm');
+  this.dialog.open(DialogConfirm);
+}
+
 }
 
 @Component({
@@ -67,7 +80,9 @@ export class ViewComponent implements OnInit {
 export class DialogPacket {
 
   constructor(
-    @Inject(MAT_DIALOG_DATA) public pakiet: Pakiet) { }
+    @Inject(MAT_DIALOG_DATA) public pakiet) {
+    console.log(this.pakiet);
+  }
 
 
 }

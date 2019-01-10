@@ -11,7 +11,7 @@
 
     <ng-container matColumnDef="zatwprzezias">
       <th mat-header-cell *matHeaderCellDef> Zatw. przez IAS </th>
-      <td mat-cell *matCellDef="let element"> {{element.zatwprzezias | trueFalse}} </td>
+      <td mat-cell *matCellDef="let element"><span (click)="clickConfirm(element)"> {{element.zatwprzezias | trueFalse}} </span> </td>
     </ng-container>
 
     <ng-container matColumnDef="liczbaok">
