@@ -1,3 +1,12 @@
-<p>
-    KDialog confirm
-</p>
+<h3 mat-dialog-title>{{confirmForm.nazwa}}</h3>
+<div mat-dialog-content>
+  <p>Osoba zatwierdzająca:</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="zatwierdzajacy" autocomplete="off" placeholder="imię i nazwisko">
+  </mat-form-field>
+  
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Anuluj</button>
+  <button *ngIf="zatwierdzajacy" mat-button [mat-dialog-close]="zatwierdzajacy" cdkFocusInitial>Ok</button>
+</div>

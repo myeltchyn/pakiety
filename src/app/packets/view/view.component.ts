@@ -35,7 +35,7 @@ export class ViewComponent implements OnInit {
       .pipe(startWith({}), map((search) => this.searchingString = search['searchField']),
         switchMap(() => {
           this.isLoadingResults = true;
-          return this.rest.getWykonaniaPakietow(this.paginator.pageIndex + 1, 5, this.searchingString)
+          return this.rest.getWykonaniaPakietow(this.paginator.pageIndex + 1, 8, this.searchingString)
         }
         ))
       .subscribe((pakiet) => {
@@ -50,11 +50,9 @@ export class ViewComponent implements OnInit {
 
   }
 
-  clickPacketName(event: number) {
+  clickPacketName(id: number) {
 
-    console.log(event);
-    this.rest.getPakietById(event).subscribe(pakiet => {
-      console.log(pakiet);
+    this.rest.getPakietById(id).subscribe(pakiet => {
       this.dialog.open(DialogPacket, {
         data: {
           nazwa: pakiet.nazwa,
@@ -66,9 +64,19 @@ export class ViewComponent implements OnInit {
     );
 
   }
-clickConfirm(){
-  console.log('confirm');
-  this.dialog.open(DialogConfirm);
+clickConfirm(id:number){
+  this.rest.getPakietById(id).subscribe(pakiet => {
+    const dialogRef=this.dialog.open(DialogConfirm, {
+      disableClose: true,
+      data: {
+        nazwa: pakiet.nazwa,
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(dataFromDialog=>console.log('z dialogu'+dataFromDialog))
+  }
+  );
+
 }
 
 }
