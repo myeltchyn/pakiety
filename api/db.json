@@ -53,6 +53,25 @@
       ],
       "opis": "opis paketu2",
       "id": 4
+    },
+    {
+      "nazwa": "Poltax2b",
+      "dataWydania": "2018-12-11T23:00:00.000Z",
+      "terminWykonania": "2019-01-14T23:00:00.000Z",
+      "wymaganyZalacznik": "NIE",
+      "dotUS": [
+        "2802",
+        "2803",
+        "2804",
+        "2805",
+        "2806",
+        "2807",
+        "2808",
+        "2809",
+        "2810"
+      ],
+      "opis": "Z bilansem otwarcia",
+      "id": 5
     }
   ],
   "items": [
@@ -80,14 +99,14 @@
       "sumaId": 1
     },
     {
-      "nazwapakietu": "3. CZM wersja 2018.10 oraz e-CZM",
+      "nazwapakietu": "3. Poltax2b",
       "idwykonania": 3,
       "zatwprzezias": false,
       "liczbaok": "18/10",
       "osobazatwierdzajaca": null,
       "datawydania": "2018-12-07",
       "wykonacdo": "2018-12-20",
-      "idpakietu": 2,
+      "idpakietu": 5,
       "sumaId": 1
     },
     {
@@ -202,32 +221,31 @@
       "sumaId": 1
     }
   ],
-  "usexe":[
+  "usexe": [
     {
       "id": 1,
-      "idpakietu":1,
+      "idpakietu": 1,
       "dataWykonania": "2018-12-01",
-      "dataZamieszczenia":"2018-12-01",
+      "dataZamieszczenia": "2018-12-01",
       "zalacznik": false,
       "us": 2805,
       "uwagi": "Wszystko OK",
-      "status":"Wykonana poprawnie",
-      "wykonal":"Informatyk 1",
-      "zamiescil":"Informatyk1_1"
+      "status": "Wykonana poprawnie",
+      "wykonal": "Informatyk 1",
+      "zamiescil": "Informatyk1_1"
     },
     {
       "id": 2,
-      "idpakietu":1,
+      "idpakietu": 1,
       "dataWykonania": "2018-12-02",
-      "dataZamieszczenia":"2018-12-02",
+      "dataZamieszczenia": "2018-12-02",
       "zalacznik": false,
       "us": 2804,
       "uwagi": "Wszystko OKI",
-      "status":"Wykonana poprawnie!",
-      "wykonal":"Informatyk 2",
-      "zamiescil":"Informatyk2_1"
+      "status": "Wykonana poprawnie!",
+      "wykonal": "Informatyk 2",
+      "zamiescil": "Informatyk2_1"
     }
-
   ],
   "jorg": [
     {

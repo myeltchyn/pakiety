@@ -51,8 +51,9 @@ export class ViewComponent implements OnInit {
   }
 
   clickPacketName(id: number) {
-
+    this.isLoadingResults = true;
     this.rest.getPakietById(id).subscribe(pakiet => {
+      this.isLoadingResults = false;
       this.dialog.open(DialogPacket, {
         data: {
           nazwa: pakiet.nazwa,
@@ -65,7 +66,9 @@ export class ViewComponent implements OnInit {
 
   }
 clickConfirm(id:number){
+  this.isLoadingResults = true;
   this.rest.getPakietById(id).subscribe(pakiet => {
+    this.isLoadingResults = false;
     const dialogRef=this.dialog.open(DialogConfirm, {
       disableClose: true,
       data: {
