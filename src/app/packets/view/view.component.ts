@@ -30,7 +30,9 @@ export class ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.paginator._intl.nextPageLabel='Dalej';
+    this.paginator._intl.itemsPerPageLabel='Ilość na stronie';
+    this.paginator._intl.firstPageLabel='Pierwszy';
     merge(this.paginator.page, this.searchService.getSearchingString(), this.sort.sortChange)
       .pipe(startWith({}), map((search) => this.searchingString = search['searchField']),
         switchMap(() => {

@@ -17,8 +17,12 @@ export class AuthComponent  {
   constructor(private router: Router) { }
 
  
-onSubmit(form:NgForm){/*
-  localStorage.setItem("1","jeden")
+onSubmit(form:NgForm){
+  console.log('submit');
+  
+  
+  localStorage.setItem("token","place on the token")
+  /*
   this.auth.authenticate(this.username, this.password)
   .subscribe(resp => {
     if (resp) {
