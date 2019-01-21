@@ -25,7 +25,8 @@ onSubmit(form:NgForm){
   localStorage.setItem("token","place on the token");
   this.auth.authenticate(this.username, this.password)
   .subscribe(resp => {
-    if (resp) {
+    console.log('RESP: '+resp.token);
+    if (resp.success) {
       console.log("LOGOWANIE" + this.username + " " + this.password)
       this.router.navigateByUrl("/")
     }
