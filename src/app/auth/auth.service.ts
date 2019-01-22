@@ -8,11 +8,22 @@ export interface LoginInter {
   token:string
 }
 
+export enum Roles {
+  'admin',
+  'user'
+}
+export interface CurrentUser {
+  username?:string;
+  isAuthenticated?:boolean;
+  roles?:Roles[];
+  token?:string;
+}
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   auth_token: string;
+  currentUser:CurrentUser={};
   constructor(private http: HttpClient,@Inject(REST_URL) private url:string) { }
 
   authenticate(user: string, pass: string): Observable<LoginInter> {
