@@ -8,7 +8,7 @@ export class Wykonanie {
         public dataZamieszczenia:Date,
         public zamiescil:string,
         public us:Uesy,
-        public pakiet?:Pakiet,
+        public pakietyId?:number,
         public uwagi?:string,
         public zalacznikUrl?:string,
         public wykonal?:string,

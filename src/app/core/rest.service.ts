@@ -40,6 +40,11 @@ export class RestService {
     return this.http.get<Wykonaniezbiorcze>(uri,{observe:'response'});
   }
 
+  getWykonanie(page:number,limit:number,search:string):Observable<Pakiet[]>{
+    let uriWithoutFilter=`/api/pakiety?_page=${page}&_limit=${limit}&_embed=wykonanie`;
+    return this.http.get<Pakiet[]>(uriWithoutFilter);
+  }
+
   get jorg():Observable<Jorg[]>{
     return this.http.get<Jorg[]>('/api/jorg');
     

@@ -1,3 +1,5 @@
+import { Wykonanie } from './wykonanie';
+
 export enum Zatwierdzono {
     TAK = 1,
     NIE = 2
@@ -17,6 +19,8 @@ export interface pakiet {
     wymaganyZalacznik: boolean,
     dotUS: string[],
     opis?: string,
+    zatwierdzil?:string,
+    wykonanie:Wykonanie[]
 }
 
 export class Pakiet implements pakiet {
@@ -27,6 +31,8 @@ export class Pakiet implements pakiet {
     public wymaganyZalacznik: boolean;
     public dotUS: string[];
     public opis?: string;
+    public zatwierdzil?:string;
+    public wykonanie:Wykonanie[]
     
     constructor(attrs: Partial<pakiet> = {}) {
         this.id = attrs.id;
@@ -35,6 +41,8 @@ export class Pakiet implements pakiet {
         this.terminWykonania = attrs.terminWykonania;
         this.wymaganyZalacznik = attrs.wymaganyZalacznik;
         this.dotUS = attrs.dotUS;
-        this.opis = attrs.opis
+        this.opis = attrs.opis;
+        this.zatwierdzil=attrs.zatwierdzil;
+        this.wykonanie=attrs.wykonanie;
         
     }}

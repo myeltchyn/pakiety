@@ -7,6 +7,8 @@ import { merge } from 'rxjs';
 import { startWith, switchMap, map, tap } from 'rxjs/operators';
 import { CONFIG, Config } from 'src/app/model/config';
 import { DialogConfirm } from './dialog-confirm.component';
+import { Wykonanie } from 'src/app/model/wykonanie';
+import { Pakiet } from 'src/app/model/pakiet';
 
 @Component({
   selector: 'app-view',
@@ -22,7 +24,8 @@ export class ViewComponent implements OnInit {
   searchingString = '';
   displayedColumns: string[] = ['nazwapakietu', 'zatwprzezias', 'liczbaok', 'osobazatwierdzajaca', 'datawydania', 'wykonacdo'];
   dataSource: Wykonaniezbiorcze;
-
+  wykonanie: Wykonanie[] = [];
+  pakiety: Pakiet[] = [];
 
   constructor(@Inject(CONFIG) public config: Config,
     private rest: RestService, private searchService: SearchService, public dialog: MatDialog) {
@@ -30,9 +33,9 @@ export class ViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.paginator._intl.nextPageLabel='Dalej';
-    this.paginator._intl.itemsPerPageLabel='Ilość na stronie';
-    this.paginator._intl.firstPageLabel='Pierwszy';
+    this.paginator._intl.nextPageLabel = 'Dalej';
+    this.paginator._intl.itemsPerPageLabel = 'Ilość na stronie';
+    this.paginator._intl.firstPageLabel = 'Pierwszy';
     merge(this.paginator.page, this.searchService.getSearchingString(), this.sort.sortChange)
       .pipe(startWith({}), map((search) => this.searchingString = search['searchField']),
         switchMap(() => {
@@ -52,6 +55,11 @@ export class ViewComponent implements OnInit {
 
   }
 
+  getWykonanie() {
+    this.rest.getWykonanie(0, 5, '').pipe(tap(x=>console.log(x)))
+      .subscribe();
+  }
+
   clickPacketName(id: number) {
     this.isLoadingResults = true;
     this.rest.getPakietById(id).subscribe(pakiet => {
@@ -67,22 +75,22 @@ export class ViewComponent implements OnInit {
     );
 
   }
-clickConfirm(id:number){
-  this.isLoadingResults = true;
-  this.rest.getPakietById(id).subscribe(pakiet => {
-    this.isLoadingResults = false;
-    const dialogRef=this.dialog.open(DialogConfirm, {
-      disableClose: true,
-      data: {
-        nazwa: pakiet.nazwa,
-      }
-    });
+  clickConfirm(id: number) {
+    this.isLoadingResults = true;
+    this.rest.getPakietById(id).subscribe(pakiet => {
+      this.isLoadingResults = false;
+      const dialogRef = this.dialog.open(DialogConfirm, {
+        disableClose: true,
+        data: {
+          nazwa: pakiet.nazwa,
+        }
+      });
 
-    dialogRef.afterClosed().subscribe(dataFromDialog=>console.log('z dialogu'+dataFromDialog))
+      dialogRef.afterClosed().subscribe(dataFromDialog => console.log('z dialogu' + dataFromDialog))
+    }
+    );
+
   }
-  );
-
-}
 
 }
 
