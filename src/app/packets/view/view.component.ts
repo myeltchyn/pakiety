@@ -43,7 +43,7 @@ export class ViewComponent implements OnInit {
           return this.rest.getWykonaniaPakietow(this.paginator.pageIndex + 1, 8, this.searchingString)
         }
         ))
-      .subscribe((pakiet) => {
+      .subscribe(pakiet => {
         next: {
           this.isLoadingResults = false;
           console.log(pakiet);
@@ -56,8 +56,14 @@ export class ViewComponent implements OnInit {
   }
 
   getWykonanie() {
-    this.rest.getWykonanie(0, 5, '').pipe(tap(x=>console.log(x)))
-      .subscribe();
+    this.rest.getWykonanie(0, 5, '').pipe(tap(x => console.log(x)))
+      .subscribe(data => {
+        next: {
+          this.pakiety = data;
+          console.log(this.pakiety[0].wykonanie[0].wykonal);
+        }
+        error: () => console.log('error')
+      })
   }
 
   clickPacketName(id: number) {
