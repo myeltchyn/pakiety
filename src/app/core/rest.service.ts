@@ -26,15 +26,13 @@ export class RestService {
       pipe(map((data)=>new Pakiet(data)));
   }
 
-  /*get wykonaniaPakietow():Observable<Wykonaniezbiorcze[]>{
-    return this.http.get<Wykonaniezbiorcze[]>('/api/wykonaniezbiorcze').
-        pipe(map((data)=>data.map((pakiet)=>new Wykonaniezbiorcze(pakiet)))
-    );
-  }*/
+  getCountExecuted(id:number):Observable<number>{
+    return this.http.get<number>(`/api/wykonanie?pakietyId=${id}`).pipe(map((data)=>10));
+  }
 
   getWykonaniaPakietow(page:number,limit:number,search:string):Observable<HttpResponse<Wykonaniezbiorcze>>{
-    let uriWithoutFilter=`/api/items?_page=${page}&_limit=${limit}`;
-    let uriWithFilter=`/api/items?_page=${page}&_limit=${limit}&nazwapakietu_like=${search}`
+    let uriWithoutFilter=`/api/pakiety?_embed=wykonanie&_page=${page}&_limit=${limit}`;
+    let uriWithFilter=`/api/pakiety?_embed=wykonanie&_page=${page}&_limit=${limit}&nazwa_like=${search}`
     let uri='';
     !search ? uri=uriWithoutFilter : uri=uriWithFilter;
     return this.http.get<Wykonaniezbiorcze>(uri,{observe:'response'});

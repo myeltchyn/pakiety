@@ -17,6 +17,8 @@ export interface pakiet {
     wymaganyZalacznik: boolean,
     dotUS: string[],
     opis?: string,
+    osobazatwierdzajaca:string,
+    zatwprzezias:boolean
 }
 
 export class Pakiet implements pakiet {
@@ -27,6 +29,8 @@ export class Pakiet implements pakiet {
     public wymaganyZalacznik: boolean;
     public dotUS: string[];
     public opis?: string;
+    public osobazatwierdzajaca:string;
+    public zatwprzezias:boolean
     
     constructor(attrs: Partial<pakiet> = {}) {
         this.id = attrs.id;
@@ -35,6 +39,8 @@ export class Pakiet implements pakiet {
         this.terminWykonania = attrs.terminWykonania;
         this.wymaganyZalacznik = attrs.wymaganyZalacznik;
         this.dotUS = attrs.dotUS;
-        this.opis = attrs.opis
+        this.opis = attrs.opis;
+        this.osobazatwierdzajaca=attrs.osobazatwierdzajaca;
+        this.zatwprzezias=attrs.zatwprzezias;
         
     }}

@@ -3,11 +3,12 @@ import { RestService } from 'src/app/core/rest.service';
 import { Wykonaniezbiorcze } from 'src/app/model/wykonaniezbiorcze';
 import { MatPaginator, MatSort, MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { SearchService } from 'src/app/core/search.service';
-import { merge } from 'rxjs';
+import { merge, Observable, of, from } from 'rxjs';
 import { startWith, switchMap, map, tap } from 'rxjs/operators';
 import { CONFIG, Config } from 'src/app/model/config';
 import { DialogConfirm } from './dialog-confirm.component';
-
+import { delay } from 'q';
+const myObservable = of(1, 2, 3);
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -20,9 +21,9 @@ export class ViewComponent implements OnInit {
   isLoadingResults = false;
   resultsLength = 0;
   searchingString = '';
-  displayedColumns: string[] = ['nazwapakietu', 'zatwprzezias', 'liczbaok', 'osobazatwierdzajaca', 'datawydania', 'wykonacdo'];
+  displayedColumns: string[] = ['nazwa', 'zatwprzezias', 'count', 'osobazatwierdzajaca', 'dataWydania', 'terminWykonania'];
   dataSource: Wykonaniezbiorcze;
-
+  count;
 
   constructor(@Inject(CONFIG) public config: Config,
     private rest: RestService, private searchService: SearchService, public dialog: MatDialog) {
@@ -30,6 +31,7 @@ export class ViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    //this.count=this.countExecute();
     this.paginator._intl.nextPageLabel='Dalej';
     this.paginator._intl.itemsPerPageLabel='Ilość na stronie';
     this.paginator._intl.firstPageLabel='Pierwszy';
@@ -37,6 +39,7 @@ export class ViewComponent implements OnInit {
       .pipe(startWith({}), map((search) => this.searchingString = search['searchField']),
         switchMap(() => {
           this.isLoadingResults = true;
+          this.count=this.rest.getCountExecuted(1);
           return this.rest.getWykonaniaPakietow(this.paginator.pageIndex + 1, 8, this.searchingString)
         }
         ))
@@ -47,6 +50,7 @@ export class ViewComponent implements OnInit {
           this.dataSource = pakiet.body;
           this.resultsLength = +pakiet.headers.get('x-total-count');
         }
+        complete:{console.log(this.dataSource[5].status)}
         error: () => { console.log('error') };
       });
 
@@ -82,6 +86,10 @@ clickConfirm(id:number){
   }
   );
 
+}
+
+countExecute(element:number):Observable<number>{
+  return of(element).pipe();
 }
 
 }
