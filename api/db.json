@@ -72,6 +72,24 @@
       ],
       "opis": "Z bilansem otwarcia",
       "id": 5
+    },
+    {
+      "nazwa": "Zestaw 555_IS",
+      "dataWydania": "2019-02-08T23:00:00.000Z",
+      "terminWykonania": "2019-02-14T23:00:00.000Z",
+      "wymaganyZalacznik": "NIE",
+      "dotUS": [
+        "2802",
+        "2803",
+        "2804",
+        "2805",
+        "2806",
+        "2807",
+        "2808",
+        "2809"
+      ],
+      "opis": "Patch 14 oraz Słowniki Centralne SC189D",
+      "id": 6
     }
   ],
   "items": [
