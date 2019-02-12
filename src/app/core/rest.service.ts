@@ -30,6 +30,10 @@ export class RestService {
     return this.http.get<number>(`/api/wykonanie?pakietyId=${id}`).pipe(map((data)=>10));
   }
 
+  getCount(id:number):Observable<number>{
+    return this.http.get<number>(`/api/count/1`).pipe(map((a)=>102));
+  }
+
   getWykonaniaPakietow(page:number,limit:number,search:string):Observable<HttpResponse<Wykonaniezbiorcze>>{
     let uriWithoutFilter=`/api/pakiety?_embed=wykonanie&_page=${page}&_limit=${limit}`;
     let uriWithFilter=`/api/pakiety?_embed=wykonanie&_page=${page}&_limit=${limit}&nazwa_like=${search}`

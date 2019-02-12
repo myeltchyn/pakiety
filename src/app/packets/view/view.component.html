@@ -14,9 +14,9 @@
       <td mat-cell *matCellDef="let element"><span class="kursor" (click)="clickConfirm(element.id)"> {{element.zatwprzezias | trueFalse}} </span> </td>
     </ng-container>
 
-    <ng-container matColumnDef="count">
+    <ng-container matColumnDef="count" >
       <th mat-header-cell *matHeaderCellDef> Liczba OK </th>
-      <td mat-cell *matCellDef="let element"> {{countExecute(element.id) | async}} </td>
+      <td mat-cell *matCellDef="let element" >{{setKomorka(element.id)}} {{count | async}} </td>
     </ng-container>
 
     <ng-container matColumnDef="osobazatwierdzajaca">
