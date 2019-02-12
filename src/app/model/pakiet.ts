@@ -1,3 +1,5 @@
+import { Wykonanie } from './wykonanie';
+
 export enum Zatwierdzono {
     TAK = 1,
     NIE = 2
@@ -17,8 +19,13 @@ export interface pakiet {
     wymaganyZalacznik: boolean,
     dotUS: string[],
     opis?: string,
+<<<<<<< HEAD
     osobazatwierdzajaca:string,
     zatwprzezias:boolean
+=======
+    zatwierdzil?:string,
+    wykonanie:Wykonanie[]
+>>>>>>> e18bf8680fb764e5ca7e013214cb27241c4eeb6d
 }
 
 export class Pakiet implements pakiet {
@@ -29,8 +36,13 @@ export class Pakiet implements pakiet {
     public wymaganyZalacznik: boolean;
     public dotUS: string[];
     public opis?: string;
+<<<<<<< HEAD
     public osobazatwierdzajaca:string;
     public zatwprzezias:boolean
+=======
+    public zatwierdzil?:string;
+    public wykonanie:Wykonanie[]
+>>>>>>> e18bf8680fb764e5ca7e013214cb27241c4eeb6d
     
     constructor(attrs: Partial<pakiet> = {}) {
         this.id = attrs.id;
@@ -40,7 +52,12 @@ export class Pakiet implements pakiet {
         this.wymaganyZalacznik = attrs.wymaganyZalacznik;
         this.dotUS = attrs.dotUS;
         this.opis = attrs.opis;
+<<<<<<< HEAD
         this.osobazatwierdzajaca=attrs.osobazatwierdzajaca;
         this.zatwprzezias=attrs.zatwprzezias;
+=======
+        this.zatwierdzil=attrs.zatwierdzil;
+        this.wykonanie=attrs.wykonanie;
+>>>>>>> e18bf8680fb764e5ca7e013214cb27241c4eeb6d
         
     }}

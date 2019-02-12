@@ -11,7 +11,8 @@
         2804,
         2805
       ],
-      "opis": "Proszę o zapoznanie się z opisem zmian."
+      "opis": "Proszę o zapoznanie się z opisem zmian.",
+      "zatwierdzil":null
     },
     {
       "id": 2,
@@ -24,7 +25,8 @@
         2804,
         2805
       ],
-      "opis": "Proszę o zapoznanie się z opisem zmian."
+      "opis": "Proszę o zapoznanie się z opisem zmian.",
+      "zatwierdzil":null
     },
     {
       "nazwa": "paket",
@@ -44,7 +46,8 @@
         "2810"
       ],
       "opis": "opis paketu",
-      "id": 3
+      "id": 3,
+      "zatwierdzil":null
     },
     {
       "nazwa": "paket2",
@@ -57,7 +60,8 @@
         "2802"
       ],
       "opis": "opis paketu2",
-      "id": 4
+      "id": 4,
+      "zatwierdzil":null
     },
     {
       "nazwa": "Poltax2b",
@@ -78,7 +82,26 @@
         "2810"
       ],
       "opis": "Z bilansem otwarcia",
+<<<<<<< HEAD
       "id": 5
+=======
+      "id": 5,
+      "zatwierdzil":null
+    }
+  ],
+  "items": [
+    {
+      "id": 1,
+      "nazwapakietu": "1. CZM wersja 2018.10 oraz e-CZM",
+      "idwykonania": 1,
+      "zatwprzezias": false,
+      "liczbaok": "18/10",
+      "osobazatwierdzajaca": null,
+      "datawydania": "2018-12-07",
+      "wykonacdo": "2018-12-20",
+      "idpakietu": 2,
+      "sumaId": 1
+>>>>>>> e18bf8680fb764e5ca7e013214cb27241c4eeb6d
     },
     {
       "nazwa": "Zestaw 555_IS",
@@ -115,7 +138,11 @@
     },
     {
       "id": 2,
+<<<<<<< HEAD
       "pakietyId": 6,
+=======
+      "pakietyId": 1,
+>>>>>>> e18bf8680fb764e5ca7e013214cb27241c4eeb6d
       "dataWykonania": "2018-12-02",
       "dataZamieszczenia": "2018-12-02",
       "zalacznik": false,
@@ -123,6 +150,18 @@
       "uwagi": "Wszystko OKI",
       "status": "Wykonana poprawnie!",
       "wykonal": "Informatyk 2",
+      "zamiescil": "Informatyk2_1"
+    },
+    {
+      "id": 3,
+      "pakietyId": 2,
+      "dataWykonania": "2018-12-29",
+      "dataZamieszczenia": "2018-12-30",
+      "zalacznik": false,
+      "us": 2804,
+      "uwagi": "Wszystko OKI!",
+      "status": "Wykonana poprawnie!!!",
+      "wykonal": "Informatyk 2_1",
       "zamiescil": "Informatyk2_1"
     }
   ],

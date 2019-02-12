@@ -7,8 +7,14 @@ import { merge, Observable, of, from } from 'rxjs';
 import { startWith, switchMap, map, tap } from 'rxjs/operators';
 import { CONFIG, Config } from 'src/app/model/config';
 import { DialogConfirm } from './dialog-confirm.component';
+<<<<<<< HEAD
 import { delay } from 'q';
 const myObservable = of(1, 2, 3);
+=======
+import { Wykonanie } from 'src/app/model/wykonanie';
+import { Pakiet } from 'src/app/model/pakiet';
+
+>>>>>>> e18bf8680fb764e5ca7e013214cb27241c4eeb6d
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -23,7 +29,12 @@ export class ViewComponent implements OnInit {
   searchingString = '';
   displayedColumns: string[] = ['nazwa', 'zatwprzezias', 'count', 'osobazatwierdzajaca', 'dataWydania', 'terminWykonania'];
   dataSource: Wykonaniezbiorcze;
+<<<<<<< HEAD
   count;
+=======
+  wykonanie: Wykonanie[] = [];
+  pakiety: Pakiet[] = [];
+>>>>>>> e18bf8680fb764e5ca7e013214cb27241c4eeb6d
 
   constructor(@Inject(CONFIG) public config: Config,
     private rest: RestService, private searchService: SearchService, public dialog: MatDialog) {
@@ -31,10 +42,16 @@ export class ViewComponent implements OnInit {
   }
 
   ngOnInit() {
+<<<<<<< HEAD
     //this.count=this.countExecute();
     this.paginator._intl.nextPageLabel='Dalej';
     this.paginator._intl.itemsPerPageLabel='Ilość na stronie';
     this.paginator._intl.firstPageLabel='Pierwszy';
+=======
+    this.paginator._intl.nextPageLabel = 'Dalej';
+    this.paginator._intl.itemsPerPageLabel = 'Ilość na stronie';
+    this.paginator._intl.firstPageLabel = 'Pierwszy';
+>>>>>>> e18bf8680fb764e5ca7e013214cb27241c4eeb6d
     merge(this.paginator.page, this.searchService.getSearchingString(), this.sort.sortChange)
       .pipe(startWith({}), map((search) => this.searchingString = search['searchField']),
         switchMap(() => {
@@ -43,7 +60,7 @@ export class ViewComponent implements OnInit {
           return this.rest.getWykonaniaPakietow(this.paginator.pageIndex + 1, 8, this.searchingString)
         }
         ))
-      .subscribe((pakiet) => {
+      .subscribe(pakiet => {
         next: {
           this.isLoadingResults = false;
           console.log(pakiet);
@@ -54,6 +71,17 @@ export class ViewComponent implements OnInit {
         error: () => { console.log('error') };
       });
 
+  }
+
+  getWykonanie() {
+    this.rest.getWykonanie(0, 5, '').pipe(tap(x => console.log(x)))
+      .subscribe(data => {
+        next: {
+          this.pakiety = data;
+          console.log(this.pakiety[0].wykonanie[0].wykonal);
+        }
+        error: () => console.log('error')
+      })
   }
 
   clickPacketName(id: number) {
@@ -71,22 +99,22 @@ export class ViewComponent implements OnInit {
     );
 
   }
-clickConfirm(id:number){
-  this.isLoadingResults = true;
-  this.rest.getPakietById(id).subscribe(pakiet => {
-    this.isLoadingResults = false;
-    const dialogRef=this.dialog.open(DialogConfirm, {
-      disableClose: true,
-      data: {
-        nazwa: pakiet.nazwa,
-      }
-    });
+  clickConfirm(id: number) {
+    this.isLoadingResults = true;
+    this.rest.getPakietById(id).subscribe(pakiet => {
+      this.isLoadingResults = false;
+      const dialogRef = this.dialog.open(DialogConfirm, {
+        disableClose: true,
+        data: {
+          nazwa: pakiet.nazwa,
+        }
+      });
 
-    dialogRef.afterClosed().subscribe(dataFromDialog=>console.log('z dialogu'+dataFromDialog))
+      dialogRef.afterClosed().subscribe(dataFromDialog => console.log('z dialogu' + dataFromDialog))
+    }
+    );
+
   }
-  );
-
-}
 
 countExecute(element:number):Observable<number>{
   return of(element).pipe();
