@@ -31,7 +31,7 @@ export class RestService {
   }
 
   getCount(id:number):Observable<number>{
-    return this.http.get<number>(`/api/count/1`).pipe(map((a)=>102));
+    return this.http.get<Liczby>(`/api/count/1`).pipe(map((a)=>a.liczba));
   }
 
   getWykonaniaPakietow(page:number,limit:number,search:string):Observable<HttpResponse<Wykonaniezbiorcze>>{
@@ -55,4 +55,9 @@ export class RestService {
   savePacket(packet:pakiet):Observable<pakiet>{
     return this.http.post<pakiet>('/api/pakiety',packet);
   }
+}
+
+export interface Liczby {
+  id:number;
+  liczba:number
 }

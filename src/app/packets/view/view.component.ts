@@ -21,21 +21,23 @@ export class ViewComponent implements OnInit {
   isLoadingResults = false;
   resultsLength = 0;
   searchingString = '';
-  displayedColumns: string[] = ['nazwa', 'zatwprzezias', 'count', 'osobazatwierdzajaca', 'dataWydania', 'terminWykonania'];
+  displayedColumns: string[] = ['nazwa', 'zatwprzezias', 'liczbaok', 'osobazatwierdzajaca', 'dataWydania', 'terminWykonania'];
   dataSource: Wykonaniezbiorcze;
   count:Observable<number>;
 
   constructor(@Inject(CONFIG) public config: Config,
     private rest: RestService, private searchService: SearchService, public dialog: MatDialog) {
     console.log(this.config.baseUrl);
-    setInterval(() => {
+   /* setInterval(() => {
       console.log('odswiezam');
       this.count=this.countExecute(1);
       console.log(this.komorka);
-    }, 5000);
+    }, 5000);*/
+    this.getKomorka(1).subscribe(a=>{console.log('A: '+a)});
   }
-  setKomorka(id:number){
-    this.komorka=id;
+  getKomorka(id:number):Observable<number>{
+  // return of(id);
+  return this.rest.getCount(id);
   }
   ngOnInit() {
     //this.count=this.countExecute();
@@ -55,6 +57,7 @@ export class ViewComponent implements OnInit {
           this.isLoadingResults = false;
           console.log(pakiet);
           this.dataSource = pakiet.body;
+          this.rest.getCount(1).subscribe(a=>this.dataSource[0].liczbaok=a);
           this.resultsLength = +pakiet.headers.get('x-total-count');
         }
         complete:{console.log(this.dataSource[5].status)}

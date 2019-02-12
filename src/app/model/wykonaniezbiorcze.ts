@@ -5,7 +5,7 @@ export interface Wykonaniezbiorcze extends Pakiet,Wykonanie {
     //nazwa:string;
     //idwykonania:number;
     //zatwprzezias:boolean;
-    liczbaok:string;
+    liczbaok:number;
     //osobazatwierdzajaca:string;
     //dataWydania:Date;
     //terminWykonania:Date;
